@@ -121,7 +121,7 @@ git clone https://github.com/monero-project/monero.git
 cd monero
 git checkout v0.18.3.4
 git submodule update --init
-USE_SINGLE_BUILDDIR=1 make -j$(nproc) release || USE_SINGLE_BUILDDIR=1 make -j1 release
+USE_SINGLE_BUILDDIR=1 make -j1 release || USE_SINGLE_BUILDDIR=1 make -j1 release
 
 (cat <<EOF
 set -x
@@ -195,7 +195,7 @@ JOBS=$(nproc) npm install
   cd node-lmdb
   git checkout c3135a3809da1d64ce1f0956b37b618711e33519
   cd dependencies/lmdb/libraries/liblmdb
-  make -j $(nproc)
+  make -j1
   mkdir /home/user/.bin
   echo >>/home/user/.bashrc
   echo 'export PATH=/home/user/.bin:$PATH' >>/home/user/.bashrc
